@@ -6,7 +6,7 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
   template: JST["boards/new"],
   
   render: function() {
-    var content = this.template({ model: this.model })
+    var content = this.template();
     this.$el.html(content);
     return this;
   },
@@ -14,12 +14,11 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
   submitForm: function(event) {
     event.preventDefault();
     
-    var formData = $(event.currentTarget).serializeJSON()
-    TrelloClone.Model.Board.create(formData, {
+    var formData = $(event.currentTarget).serializeJSON();
+    this.collection.create(formData, {
       success: function() {
-        Backbone.history.navigate()
+        Backbone.history.navigate("#", { trigger: true })
       }
-    })
+    });
   }
-  
 });
