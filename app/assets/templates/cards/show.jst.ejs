@@ -1,8 +1,10 @@
-<button 
-  class="btn btn-default card_button"
-  data-toggle="modal"
-  data-target="#view_card_modal"
-  data-card-id="<%= card.id %>"><%= card.escape("title") %></button>
+<div id="card_display">
+  <a
+    class="btn btn-default card_button"
+    data-toggle="modal"
+    data-target="#view_card_modal"
+    data-card-id="<%= card.id %>"><%= card.escape("title") %></a>
+</div>
   
 <div class="modal fade" id="view_card_modal">
   <div class="modal-dialog">

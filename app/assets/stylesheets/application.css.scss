@@ -20,6 +20,14 @@ body {
   background-color: hsla(0, 0, 0, 0.05);
 }
 
+.content_wrapper {
+  background-color: hsla(0, 0, 0, 0.03);
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+  margin-bottom: 90px;
+}
+
 nav.navbar {
   margin-bottom: 0px;
 }
@@ -41,11 +49,6 @@ nav.navbar {
 }
 
 .list_wrapper {
-  background-color: hsla(0, 0, 0, 0.03);
-  height: 100%;
-  position: absolute;
-  border-radius: 5px;
-  margin-bottom: 90px;
 }
 
 .board_title {
@@ -54,7 +57,7 @@ nav.navbar {
 }
 
 .list_show {
-  border: 2px solid hsla(0, 0, 0, .5);  
+  border: 2px solid hsla(0, 0, 0, .5);
   height: 50%;
   width: 30%;
   float: left;
@@ -69,14 +72,22 @@ nav.navbar {
   padding: 5px;
 }
 
+.list_show a {
+  display: block;
+  text-align: center;
+}
+
 #new_list_form {
   text-align: center;
 }
 
 #new_card_button {
+  border: none;
   display: block;
   margin: 0 auto;
   width: 100%;
+  background-color: #76C676;
+  color: hsla(0, 0, 0, .75);
 }
 
 .card_button {
@@ -90,4 +101,10 @@ nav.navbar {
 
 #new_list_link {
   width: 100%;
+  color: hsla(0, 0, 0, 0.75);
+}
+
+a.navbar-brand {
+  color: red;
+/*  color: hsla(0, 0, 0, 0.75);*/
 }
