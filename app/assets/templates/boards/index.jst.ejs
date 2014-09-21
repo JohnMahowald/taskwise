@@ -1,19 +1,18 @@
-<h1>All The Boards</h1>
+<h1>Boards</h1>
 
 <div class="boards_container"></div>
 
-<ul>
-  <% boards.forEach( function(board) { %>
-    <li>
-      <a href="#/boards/<%= board.escape("id") %>">
-        <%= board.escape("title") %>
-      </a>
-      <button 
-        class="delete_board" 
-        data-id="<%= board.id %>">Delete Board</button>
-    </li>
-  <% }) %>
-</ul>
+<% boards.forEach( function(board) { %>
+  <div class="board_display_card">
+    <a href="#/boards/<%= board.escape("id") %>">
+      <%= board.escape("title") %>
+    </a>
+    <button 
+      class="btn btn-default delete_board" 
+      data-id="<%= board.id %>">Delete Board</button>
+  </div>
+<% }) %>
 
-
-<a href="#/boards/new">Create a New Board</a>
+<div class="board_display_card">
+  <a href="#/boards/new">Create a New Board</a>
+</div>

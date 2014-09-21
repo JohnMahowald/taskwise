@@ -24,6 +24,22 @@ nav.navbar {
   margin-bottom: 0px;
 }
 
+.board_display_card {
+  background-color: #3071a9;
+  border: 2px solid hsla(0, 0, 0, .5);
+  height: 130px;
+  width: 200px;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+}
+
+.board_display_card a {
+  color: white;
+  text-align: center;
+  display: block;
+}
+
 .list_wrapper {
   background-color: hsla(0, 0, 0, 0.03);
   height: 100%;
