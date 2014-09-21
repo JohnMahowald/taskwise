@@ -6,7 +6,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   events: {
     "click .delete_board": "deleteBoard"
   },
-
+  
   template: JST["boards/index"],
   
   render: function() {
@@ -23,6 +23,5 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
     var id = $(event.currentTarget).data("id");
     var board = this.collection.getOrFetch(id)
     board.destroy();
-  }
-    
-});
+  }  
+})

@@ -13,7 +13,6 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
   
   submitForm: function(event) {
     event.preventDefault();
-    
     var formData = $(event.currentTarget).serializeJSON();
     this.collection.create(formData, {
       success: function() {
