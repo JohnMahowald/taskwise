@@ -25,3 +25,13 @@
 //= require_tree ./routers
 //= require_tree .
 //= require jquery.serializejson.min.js
+
+
+$(document).ready( function () {
+  $('#guest-login').on("click", function(e) {
+    e.preventDefault();
+    $('#user-email').val("john@me.com")
+    $('#user-password').val("johnjohn")
+    $('#signin').click();
+  })
+})

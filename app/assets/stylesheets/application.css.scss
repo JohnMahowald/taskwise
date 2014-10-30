@@ -17,11 +17,16 @@
 @import "font-awesome";
 
 $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$background-blue: rgb(35, 113, 159);
+$header-blue: rgb(26, 79, 122); 
+$fade: rgba(255,255,255,.3);
 $trello-blue: #27709b;
 $trello-blue-hover: #23719F;
+$green: rgb(90, 150, 110);
+$green-hover: rgb(90, 150, 110);
 
 body {
-  background-color: hsla(0, 0, 0, 0.05);
+  background-color: $background-blue;
   font-family: $helvetica;
 }
 
@@ -35,8 +40,9 @@ nav.navbar {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border: none;
-  background: $trello-blue;
-  background: linear-gradient(to bottom,#27709b 0,#24688f 100%);
+  font-weight: bold;
+  background: $header-blue;
+/*  background: linear-gradient(to bottom,#27709b 0,#24688f 100%);*/
   box-shadow: 0 1px 2px rgba(0,0,0,.1),0 1px 0 rgba(0,0,0,.1); 
 }
 
@@ -46,6 +52,13 @@ nav.navbar {
 
 .navbar-default .navbar-nav>li>a {
   color: white;
+}
+
+.navbar-btn {
+  background: $fade;
+  margin-right: 10px;
+  border: none;
+  font-weight: bold;
 }
 
 /* Sign In */
@@ -72,26 +85,21 @@ nav.navbar {
   margin-top: 20px;
 }
 
+#guest-login {
+  width: 100%;
+  background-color: $green;
+  border: none;
+  margin-top: 15px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+#guest-login:hover {
+  background-color: $green-hover;
+  border: none;
+}
+
 /* Boards Index */
-
-#new-board-link {
-  padding: 15px;
-  border-radius: 3px;
-  color: #939393;
-  background-color: #dbdbdb;
-}
-
-#new-board-link:hover {
-  background-color: #ccc;
-}
-
-.content_wrapper {
-  background-color: hsla(0, 0, 0, 0.03);
-  height: 100%;
-  position: absolute;
-  border-radius: 5px;
-  margin-bottom: 90px;
-}
 
 .board-card {
   position: relative;
@@ -141,54 +149,23 @@ nav.navbar {
   color: hsla(0, 0, 0, 0.70);
 }
 
-.list_show {
-  border: 2px solid hsla(0, 0, 0, .5);
-  height: 50%;
-  width: 30%;
-  float: left;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.list_show h3 {
-  font-size: 14px;
-  margin: 0px auto;
-  padding: 5px;
-}
-
-.list_show a {
-  display: block;
+#new-board-link {
+  padding-top: 40px;
+  border-radius: 3px;
+  font-weight: 400;
   text-align: center;
+  color: #939393;
+  background-color: #dbdbdb;
 }
 
-#new_list_form {
-  text-align: center;
+#new-board-link:hover {
+  background-color: #ccc;
 }
 
-#new_card_button {
-  border: none;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  background-color: #76C676;
-  color: hsla(0, 0, 0, .75);
-}
+/* Board Show */
 
-.card_button {
-  margin: 5px auto;
-  width: 100%;
-}
-
-#new_list_container {
-  height: auto;
-}
-
-#new_list_link {
-  width: 100%;
-  color: hsla(0, 0, 0, 0.75);
-}
-
-#add-dropdown {
-  margin-right: 10px;
+.boards>h1 {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: white;
 }
