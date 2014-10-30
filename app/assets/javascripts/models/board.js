@@ -1,8 +1,8 @@
-TrelloClone.Models.Board = Backbone.Model.extend({
+Taskwise.Models.Board = Backbone.Model.extend({
   urlRoot: "api/boards",
   
   lists: function() {
-    this._lists = this._lists || new TrelloClone.Collections.Lists([], {
+    this._lists = this._lists || new Taskwise.Collections.Lists([], {
       board: this
     });
     

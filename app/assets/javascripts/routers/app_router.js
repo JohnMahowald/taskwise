@@ -1,4 +1,4 @@
-TrelloClone.Routers.AppRouter = Backbone.Router.extend({
+Taskwise.Routers.AppRouter = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl
   },
@@ -9,19 +9,19 @@ TrelloClone.Routers.AppRouter = Backbone.Router.extend({
   },
   
   boardsIndex: function() {
-    TrelloClone.Collections.boards.fetch();
+    Taskwise.Collections.boards.fetch();
     
-    var view = new TrelloClone.Views.BoardsIndex({
-      collection: TrelloClone.Collections.boards
+    var view = new Taskwise.Views.BoardsIndex({
+      collection: Taskwise.Collections.boards
     });
     
     this._swapView(view);
   },
   
   boardShow: function(id) {
-    var board = TrelloClone.Collections.boards.getOrFetch(id);
+    var board = Taskwise.Collections.boards.getOrFetch(id);
     
-    var view = new TrelloClone.Views.BoardsShow({ 
+    var view = new Taskwise.Views.BoardsShow({ 
       model: board
     });
     

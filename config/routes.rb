@@ -1,4 +1,4 @@
-TrelloClone::Application.routes.draw do
+Taskwise::Application.routes.draw do
   root to: 'static_pages#root'
 
   resources :users

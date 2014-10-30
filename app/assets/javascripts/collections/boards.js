@@ -1,13 +1,13 @@
-TrelloClone.Collections.Boards = Backbone.Collection.extend({
+Taskwise.Collections.Boards = Backbone.Collection.extend({
   url: "api/boards",
   
-  model: TrelloClone.Models.Board,
+  model: Taskwise.Models.Board,
   
   getOrFetch: function(id) {
     var board = this.get(id)
     
     if (!board) {
-      board = new TrelloClone.Models.Board({ id: id })
+      board = new Taskwise.Models.Board({ id: id })
       board.fetch({
         success: function() {
           this.add(board);
@@ -21,4 +21,4 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
   }
 });
 
-TrelloClone.Collections.boards = new TrelloClone.Collections.Boards();
+Taskwise.Collections.boards = new Taskwise.Collections.Boards();

@@ -1,10 +1,10 @@
-window.TrelloClone = {
+window.Taskwise = {
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
   initialize: function() {
-    new TrelloClone.Routers.AppRouter({
+    new Taskwise.Routers.AppRouter({
       $rootEl: $("#main")
     });
     Backbone.history.start()
@@ -12,4 +12,4 @@ window.TrelloClone = {
 };
 
 
-$(TrelloClone.initialize);
+$(Taskwise.initialize);

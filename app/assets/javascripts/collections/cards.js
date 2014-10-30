@@ -1,7 +1,7 @@
-TrelloClone.Collections.Cards = Backbone.Collection.extend({
+Taskwise.Collections.Cards = Backbone.Collection.extend({
   url: "api/cards",
   
-  model: TrelloClone.Models.Card,
+  model: Taskwise.Models.Card,
   
   comparator: function(card) {
     return card.get("ord");
@@ -11,7 +11,7 @@ TrelloClone.Collections.Cards = Backbone.Collection.extend({
     var card = this.get(id)
     
     if (!card) {
-      card = new TrelloClone.Models.Card({ id: id });
+      card = new Taskwise.Models.Card({ id: id });
       card.fetch({
         successs: function() {
           this.addCard(); 
