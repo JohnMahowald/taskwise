@@ -1,4 +1,4 @@
-TrelloClone.Views.ListNew = Backbone.View.extend({
+Taskwise.Views.ListNew = Backbone.View.extend({
   events: {
     "submit #new_list_form": "submitList"
   },

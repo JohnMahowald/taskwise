@@ -1,4 +1,4 @@
-TrelloClone.Views.CardsShow = Backbone.CompositeView.extend({
+Taskwise.Views.CardsShow = Backbone.CompositeView.extend({
   template: JST["cards/show"],
   
   render: function() {

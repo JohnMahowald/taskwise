@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardsIndex = Backbone.View.extend({
+Taskwise.Views.BoardsIndex = Backbone.View.extend({
   initialize: function() {
     this.listenTo(this.collection, "sync remove", this.render)
   },
@@ -30,7 +30,7 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   
   showModal: function(event) {
     event.preventDefault();
-    var modalView = new TrelloClone.Views.BoardModal({
+    var modalView = new Taskwise.Views.BoardModal({
       collection: this.collection
     });
     $('body').prepend(modalView.render().$el);

@@ -1,4 +1,4 @@
-TrelloClone.Views.CardsNew = Backbone.View.extend({
+Taskwise.Views.CardsNew = Backbone.View.extend({
   initialize: function(options) {
     this.list_id = options.list_id
   },

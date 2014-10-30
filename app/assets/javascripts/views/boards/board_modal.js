@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardModal = Backbone.View.extend({
+Taskwise.Views.BoardModal = Backbone.View.extend({
   template: JST["boards/modal"],
   
   events: {

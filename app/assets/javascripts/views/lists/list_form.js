@@ -1,4 +1,4 @@
-TrelloClone.Views.ListForm = Backbone.View.extend({
+Taskwise.Views.ListForm = Backbone.View.extend({
   template: JST["lists/form"],
   
   events: {
@@ -14,6 +14,5 @@ TrelloClone.Views.ListForm = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON();
-    console.log(this.collection);
   },
 });

@@ -1,20 +1,20 @@
-<div class="boards-index-title">
+<div class="boards-index row">
+  <div class="col-xs-10 col-xs-offset-1">
   <h2>Boards</h2>
-</div>
 
-<div class="boards-container">
-  <% boards.forEach( function(board) { %>
-    <div class="board-display-card">
-      <a href="#/boards/<%= board.escape("id") %>">
-        <%= board.escape("title") %>
-      </a>
-      <button 
-        class="btn btn-default delete_board" 
-        data-id="<%= board.id %>">Delete Board</button>
-    </div>
-  <% }) %>
-</div>
-
-<div class="board_display_card">
-  <a href="#" id="new-board-link">Create a New Board</a>
+  <div class="boards-container">
+    
+    <% boards.forEach( function(board) { %>  
+      <a class="board-card" href="#/boards/<%= board.escape("id") %>">
+        <%= board.escape("title") %>        
+        <button 
+          class="btn btn-default delete_board" 
+          data-id="<%= board.id %>">
+          Delete Board</button>
+      </a>          
+    <% }) %>
+    
+  </div>
+  <a href="#" class='board-card' id="new-board-link">Create a New Board...</a>
+  </div>
 </div>
