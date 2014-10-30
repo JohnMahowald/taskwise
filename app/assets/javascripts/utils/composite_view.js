@@ -16,6 +16,7 @@ Backbone.CompositeView = Backbone.View.extend({
     }
   },
 
+
   attachSubviews: function () {
     // I decided I didn't want a function that renders ALL the
     // subviews together. Instead, I think:
@@ -39,7 +40,7 @@ Backbone.CompositeView = Backbone.View.extend({
 
   remove: function () {
     Backbone.View.prototype.remove.call(this);
-    _(this.subviews()).each(function (subvxiews) {
+    _(this.subviews()).each(function (subviews) {
       _(subviews).each(function (subview) {
         subview.remove();
       });

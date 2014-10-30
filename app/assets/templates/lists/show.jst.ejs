@@ -1,24 +1,33 @@
 <!-- list show-->
-<div id="the_sort_div" style="display: block; heigth: 100px; width: 300px; background-color: blue;"></div>
-
 
 <div class="list_show">
   <h3><%= list.escape("title") %></h3>
-  <div class="cards_container"></div>
-  <button 
-    class="btn btn-primary" 
+  <div class="list_cards"></div>
+  <div class="new_card_form"></div>
+  
+  <div class="delete_list">
+    <a href="#" class="delete_list" data-id="<%= list.id %>">Delete List</a>
+  </div>
+</div>
+
+
+<!--  <button
+    class="btn btn-primary"
     id="new_card_button"
     data-toggle="modal"
     data-target="#new_card_modal"
-    data-list-id="<%= list.id %>">Create New Card</button>
+    data-list-id="<%= list.id %>">Create New Card</button> -->
   
-  <div class="modal fade" id="new_card_modal">
+
+
+
+  <!-- <div class="modal fade" id="new_card_modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <form id="new_card_form">
           <div class="modal-header">
-            <button 
-              type="button" 
+            <button
+              type="button"
               class="close"
               data-dismiss="modal"><span>&times;</span><span></button>
             <h4 class="modal-title">Create New Card</h4>
@@ -34,26 +43,23 @@
             </div>
             <div class="form-group">
               <label for="card_description">Description</label>
-              <textarea 
-                name="card[description]" 
+              <textarea
+                name="card[description]"
                 class="form-control"
                 id="card_description"></textarea>
             </div>
           </div>
           <div class="modal-footer">
-            <button 
-              type="button" 
-              class="btn btn-default" 
+            <button
+              type="button"
+              class="btn btn-default"
               data-dismiss="modal">Close</button>
-           
-            <button 
+
+            <button
               type="submit"
               class="btn btn-primary"
               id="create_new_card_submit">Submit</button>
            </div>
          </form>
        </div>
-     </div>
-   </div>
-  <a href="#" class="delete_list" data-id="<%= list.id %>">Delete List</a>
-</div>
+     </div> -->

@@ -32,7 +32,7 @@ nav.navbar {
   margin-bottom: 0px;
 }
 
-.board_display_card {
+.board-display-card {
   background-color: #3071a9;
   border: 2px solid hsla(0, 0, 0, .5);
   height: 130px;
@@ -40,12 +40,30 @@ nav.navbar {
   float: left;
   margin: 5px;
   padding: 5px;
+  border-radius: 5px;
 }
 
-.board_display_card a {
+.board-display-card:hover {
+  background-color: #457FB2;
+}
+
+.board-display-card a {
   color: white;
   text-align: center;
   display: block;
+  margin-bottom: 20px;
+}
+
+.board-display-card button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  background-color: #E8E8E8;
+}
+
+.board-display-card button:hover {
+  background-color: #D1D1D1;
 }
 
 .list_wrapper {

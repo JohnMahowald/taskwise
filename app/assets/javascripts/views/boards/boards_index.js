@@ -4,8 +4,11 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   },
   
   events: {
-    "click .delete_board": "deleteBoard"
+    "click .delete_board": "deleteBoard",
+    "click #new-board-link": "showModal"
   },
+  
+  className: 'boards-index',
   
   template: JST["boards/index"],
   
@@ -20,8 +23,18 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   
   deleteBoard: function(event) {
     event.preventDefault();
-    var id = $(event.currentTarget).data("id");
-    var board = this.collection.getOrFetch(id)
+    var boardId = $(event.target).data();
+    var board = this.collection.getOrFetch(boardId);
     board.destroy();
-  }  
+  },
+  
+  showModal: function(event) {
+    event.preventDefault();
+    var modalView = new TrelloClone.Views.BoardModal({
+      collection: this.collection
+    });
+    $('body').prepend(modalView.render().$el);
+    modalView.delegateEvents();
+    $("#new-board-modal").modal("show");
+  }
 })
