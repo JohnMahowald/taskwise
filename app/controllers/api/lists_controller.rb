@@ -24,6 +24,7 @@ module Api
       if @list.update_attributes(list_params)
         render json: @list
       else
+        puts "didn't work"
         render json: @list.errors.full_messages, status: :unprocessable_entity
       end
     end

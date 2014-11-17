@@ -1,44 +1,48 @@
 Taskwise.Views.BoardsShow = Backbone.CompositeView.extend({
   initialize: function() {
-    this.collection = this.model.lists();
-    
+    this.collection.each(this.addList.bind(this));
+    this.attachListForm();
     this.listenTo(this.model, "sync", this.render);
-    // this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "removeListView", this.removeList);
     this.listenTo(this.collection, "add", this.addList);
   },
   
   template: JST["boards/show"],
-
+  
+  attributes: {
+    class: "board-background"
+  },
   
   render: function(id) {
     var content = this.template({ 
       board: this.model
     })
-    
+  
     this.$el.html(content);
-    this.renderLists();
-    this.renderListForm();
+    this.attachSubviews();
+    this.onRender();
     
     return this;
   },
   
+  removeList: function (listView) {
+    this.removeSubview('#list_container', listView)
+  },
+  
   addList: function(list) {
     var subView = new Taskwise.Views.ListShow({ 
-      model: list 
+      model: list
     });
     
     this.addSubview("#list_container", subView);
   },
   
-  renderLists: function() {
-    this.collection.each(this.addList.bind(this));
-    // this.$("#list_container").sortable();
-  },
-  
-  renderListForm: function() {
+  attachListForm: function() {
     var newListView = new Taskwise.Views.ListForm({
+      model: this.model,
       collection: this.collection
     })
+    
     this.addSubview("#list_form", newListView)
-  },
+  }
 });

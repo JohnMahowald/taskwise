@@ -21,8 +21,9 @@ Taskwise.Routers.AppRouter = Backbone.Router.extend({
   boardShow: function(id) {
     var board = Taskwise.Collections.boards.getOrFetch(id);
     
-    var view = new Taskwise.Views.BoardsShow({ 
-      model: board
+    var view = new Taskwise.Views.BoardsShow({
+      model: board,
+      collection: board.lists()
     });
     
     this._swapView(view);

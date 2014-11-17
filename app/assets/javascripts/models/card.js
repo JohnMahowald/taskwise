@@ -1,1 +1,3 @@
-Taskwise.Models.Card = Backbone.Model.extend({});
+Taskwise.Models.Card = Backbone.Model.extend({
+  urlRoot: "api/cards"
+});

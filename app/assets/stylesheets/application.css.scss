@@ -24,9 +24,12 @@ $trello-blue: #27709b;
 $trello-blue-hover: #23719F;
 $green: rgb(90, 150, 110);
 $green-hover: rgb(90, 150, 110);
+$list-grey: #e3e3e3;
+$hover-grey: #C1C1C1;
+$close-grey: #a6a6a6;
+$placeholder-grey: #646464;
 
 body {
-  background-color: $background-blue;
   font-family: $helvetica;
 }
 
@@ -42,7 +45,6 @@ nav.navbar {
   border: none;
   font-weight: bold;
   background: $header-blue;
-/*  background: linear-gradient(to bottom,#27709b 0,#24688f 100%);*/
   box-shadow: 0 1px 2px rgba(0,0,0,.1),0 1px 0 rgba(0,0,0,.1); 
 }
 
@@ -164,8 +166,237 @@ nav.navbar {
 
 /* Board Show */
 
+.board-background {
+  position: absolute;
+  z-index: -1;
+  top: 48px;
+  height: 100%;
+  width: 100%;
+  background-color: $background-blue;
+}
+
 .boards>h1 {
   font-size: 1.7em;
   font-weight: bold;
   color: white;
 }
+
+#new-board-form input {
+  display: block;
+  border-radius: 3px;
+  margin: 0 auto;
+  width: 50%;
+  padding: 8px;
+  font-size: 1.2em;
+  border: 1px solid $list-grey;
+}
+
+#new-board-form label {
+  display: block;
+  text-align: center;
+}
+
+.modal-body {
+  background-color: #eee;
+}
+
+  /* List Show */
+  
+  .list {
+    position: relative;
+    background-color: $list-grey;
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 4px;
+    padding: 6px;
+  }
+  
+  .list>h3 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .delete-list {
+    display: none;
+  }
+  
+  .delete-list:hover {
+    text-decoration: none;
+  }
+  
+  .list:hover .delete-list {
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    color: $close-grey;
+  }
+
+  /* List Form */
+  .form-wrapper {
+    display: inline-block;
+    background: rgba(0,0,0,.12);
+    padding: 7px;
+    text-align: left;
+    border-radius: 3px;
+    font-size: 1em;
+    color: rgba(255,255,255,.7);
+    width: 240px;
+    transition: .3s all;
+    position: relative;
+  }
+  
+  .form-wrapper:hover {
+/*    background: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.7);*/
+  }
+  
+  .form-wrapper>a {
+    display: none;
+    color: rgba(255,255,255,.7);
+  }
+  
+  .form-wrapper>a.active {
+    display: block;
+    color: rgba(255,255,255,.7);
+    text-decoration: none;
+  }
+  
+  .form-wrapper>form {
+    display: none;
+  }
+  
+  .form-wrapper>form.active {
+    display: block;
+  }
+  
+  .form-wrapper>form>input {
+    color: #393939;
+  }
+  
+  .form-wrapper>form>input:focus {
+    outline: none;
+  }
+  
+  .form-wrapper>form>input[type='text'] {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+  }
+  
+  .form-wrapper>form>input[type='submit'] {
+    background: #24a828;
+    background: linear-gradient(to bottom,#24a828 0,#1b7e1e 100%);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 7px;
+    float: left;
+  }
+  
+  .glyph {
+    float: left;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-size: 1.4em;
+  }
+  
+  /* New Card Form */
+  
+  .new-card {
+    margin-top: 10px;
+  }
+  
+  .card-form>.placeholder {
+    display: none;
+  }
+  
+  .card-form>.placeholder.active {
+    display: block;
+  }
+  
+  .new-card-form {
+    display: none;
+  }
+  
+  .new-card-form.active {
+    display: block;
+  }
+  
+  .new-card-form>textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    padding: 3px;
+  }
+  
+  .new-card-form>textarea:focus {
+    outline: none;
+  }
+  
+  .new-card-form>input[type='submit'] {
+    background: #24a828;
+    background: linear-gradient(to bottom,#24a828 0,#1b7e1e 100%);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2em;
+    float: left;
+  }
+  
+  .new-card-form>span {
+    margin: 0;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: $close-grey;
+  }
+  
+  /* Card Show */
+  
+  .card-show {
+    padding: 6px;
+    margin-top: 8px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid $close-grey;
+    border-radius: 3px;
+  }
+
+  .card-show:hover {
+    background-color: $hover-grey;
+  }
+  
+  .card-show>a {
+    color: #4d4d4d;
+  }
+  
+  .delete-card {
+    float: right;
+    display: none;
+  }
+  
+  .delete-card:hover {
+    text-decoration: none;
+  }
+  
+  .card-show:hover>.delete-card {
+    display: block;
+    float: right;
+  }
+  
+  .tilt {
+    transform: rotate(3deg);
+  }
+  
+  .card-placeholder {
+    width: 100%;
+    border-radius: 3px;
+    margin-top: 5px;
+    height: 35px;
+    background-color: $close-grey;
+  }

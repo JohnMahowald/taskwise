@@ -13,7 +13,6 @@ Taskwise.Views.ListNew = Backbone.View.extend({
   
   submitList: function(event) {
     event.preventDefault();
-    console.log(event.currentTarget);
     
     var formData = $(event.currentTarget).serializeJSON();
     formData.list.board_id = this.model.id,
