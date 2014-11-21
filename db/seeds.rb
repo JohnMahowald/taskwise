@@ -1,5 +1,4 @@
 user1 = User.create!(email: 'john@me.com', password: 'johnjohn')
-user2 = User.create!(email: 'thejamaicandave@gmail.com', password: 'password')
 
 board1 = user1.boards.create!(title: 'Workout')
 board2 = user1.boards.create!(title: 'Jamaica')
