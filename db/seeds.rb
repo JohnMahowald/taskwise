@@ -1,7 +1,7 @@
 user1 = User.create!(email: 'john@me.com', password: 'johnjohn')
 
-board1 = user1.boards.create!(title: 'Workout')
-board2 = user1.boards.create!(title: 'Jamaica')
+board1 = user1.boards.create!(title: 'Camping')
+board2 = user1.boards.create!(title: '')
 
 list1 = board1.lists.create!(title: 'todo')
 list2 = board1.lists.create!(title: 'doing')
