@@ -18,11 +18,11 @@ list3.cards.create!(title: 'Power Cleans', description: 'feel the burn')
 list3.cards.create!(title: 'L Hangs', description: 'ooh ouch')
 list3.cards.create!(title: 'Jumping Jacks', description: 'ouchy')
 
-board2 = user1.boards.creaet!(title: "Jamaica")
+board2 = user1.boards.create!(title: "Jamaica")
 
 list4 = board2.lists.create!(title: "Visit")
-list4 = board2.lists.create!(title: "Eat")
-list4 = board2.lists.create!(title: "Listen")
+list5 = board2.lists.create!(title: "Eat")
+list6 = board2.lists.create!(title: "Listen")
 
 list4.cards.create!(title: 'Kingston', description: 'feel the burn')
 list4.cards.create!(title: 'Montego Bay', description: 'ooh ouch')
