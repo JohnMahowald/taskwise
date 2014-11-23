@@ -10,7 +10,7 @@ Taskwise.Views.BoardsShow = Backbone.CompositeView.extend({
   template: JST["boards/show"],
   
   attributes: {
-    class: "board-background"
+    class: "board-show clearfix"
   },
   
   render: function(id) {
@@ -26,7 +26,7 @@ Taskwise.Views.BoardsShow = Backbone.CompositeView.extend({
   },
   
   removeList: function (listView) {
-    this.removeSubview('#list_container', listView)
+    this.removeSubview('#lists', listView)
   },
   
   addList: function(list) {
@@ -34,7 +34,7 @@ Taskwise.Views.BoardsShow = Backbone.CompositeView.extend({
       model: list
     });
     
-    this.addSubview("#list_container", subView);
+    this.addSubview("#lists", subView);
   },
   
   attachListForm: function() {
