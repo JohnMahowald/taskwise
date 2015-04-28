@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: taskwise_development
   pool: 5
-  username: John
+  username: jmahowald
   password:
 
 test:
@@ -11,5 +11,5 @@ test:
   encoding: unicode
   database: taskwise_test
   pool: 5
-  username: John
+  username: jmahowald
   password:
