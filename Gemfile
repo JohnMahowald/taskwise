@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 gem 'backbone-on-rails'
 gem 'bcrypt'
 gem 'bootstrap-sass'
@@ -24,6 +26,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
-  gem 'debugger'
+  gem 'byebug'
 end
 
